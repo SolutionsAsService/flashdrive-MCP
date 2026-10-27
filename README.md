@@ -130,4 +130,9 @@ flash_evacuate([...], dry_run=false)      -> moved to E:\flashdrive\_evacuated\<
 
 ```bash
 .venv/Scripts/python.exe -m pytest -q
+.venv/Scripts/python.exe scripts/smoke.py        # in-process tool round trip
+.venv/Scripts/python.exe scripts/stdio_check.py  # over real stdio, as Claude connects
 ```
+
+Server startup is ~4 s, so `claude mcp list` may report "tools fetch failed — Request
+timed out" on a cold start. It works normally inside a session.
