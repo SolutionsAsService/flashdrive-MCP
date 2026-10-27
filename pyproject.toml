@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flashdrive-mcp"
+version = "0.1.0"
+authors = [{ name = "SolutionsAsService" }]
+description = "MCP server that keeps Claude's generated files on a secondary or removable drive instead of the system drive"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["fastmcp==4.1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+flashdrive-mcp = "flashdrive_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flashdrive_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

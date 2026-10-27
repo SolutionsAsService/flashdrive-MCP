@@ -1,0 +1,8 @@
+{
+  "root": "E:\\flashdrive",
+  "system_drive": "C:",
+  "min_free_mb": 1024,
+  "max_file_mb": 512,
+  "allow_system_drive": false,
+  "prefer": "removable"
+}
